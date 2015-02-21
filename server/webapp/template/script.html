@@ -1,0 +1,187 @@
+<style type="text/css">
+	body {
+		height: 600px;
+		width: 800px;
+	}
+	#display {
+		height: 100%;
+		width: 100%;
+		border-top: 1px solid #ddd;
+		margin-top: 20px;
+	}
+	#items {
+		float: left;
+		height: 100%;
+		width: 60%;
+	}
+	#tbl {
+		float: left;
+		height:100%;
+		width: 37%;
+		padding-left: 2%;
+	}
+	table.reference {
+		width:100%;
+		max-width:100%;
+		border-left:1px solid #dddddd;
+		border-right:1px solid #dddddd;
+		border-bottom:1px solid #dddddd;
+	}
+	table.reference>thead>tr>th,
+	 table.reference>tbody>tr>th,
+	 table.reference>tfoot>tr>th,
+	 table.reference>thead>tr>td,
+	 table.reference>tbody>tr>td,
+	 table.reference>tfoot>tr>td {
+		padding: 10px;
+		line-height: 1.5;
+		vertical-align: top;
+		border-top: 1px solid #ddd;
+	}
+	table.reference tr:nth-child(odd)   {background-color:#ffffff;}
+	table.reference tr:nth-child(even)  {background-color:#f5f5f5;}
+
+
+	.modalDialog {
+		position: fixed;
+		font-family: Arial, Helvetica, sans-serif;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.8);
+		z-index: 99999;
+		opacity:0;
+		-webkit-transition: opacity 400ms ease-in;
+		-moz-transition: opacity 400ms ease-in;
+		transition: opacity 400ms ease-in;
+		pointer-events: none;
+	}
+
+	.modalDialog:target {
+		opacity:1;
+		pointer-events: auto;
+	}
+
+	.modalDialog > div {
+		width: 400px;
+		position: relative;
+		margin: 10% auto;
+		padding: 5px 20px 13px 20px;
+		border-radius: 10px;
+		background: #fff;
+		background: -moz-linear-gradient(#fff, #999);
+		background: -webkit-linear-gradient(#fff, #999);
+		background: -o-linear-gradient(#fff, #999);
+	}
+
+	.close {
+		background: #606061;
+		color: #FFFFFF;
+		line-height: 25px;
+		position: absolute;
+		right: -12px;
+		text-align: center;
+		top: -10px;
+		width: 24px;
+		text-decoration: none;
+		font-weight: bold;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		border-radius: 12px;
+		-moz-box-shadow: 1px 1px 3px #000;
+		-webkit-box-shadow: 1px 1px 3px #000;
+		box-shadow: 1px 1px 3px #000;
+	}
+
+	.close:hover { background: #00d9ff; }
+
+</style>
+
+<script type="text/javascript">
+	function configureDropDownLists(ddl1,ddl2) {
+		var colours = new Array('Black', 'White', 'Blue');
+		var shapes = new Array('Square', 'Circle', 'Triangle');
+		var names = new Array('John', 'David', 'Sarah');
+
+		switch (ddl1.value) {
+			case 'Colours':
+				ddl2.options.length = 0;
+				for (i = 0; i < colours.length; i++) {
+					createOption(ddl2, colours[i], colours[i]);
+				}
+				break;
+			case 'Shapes':
+				ddl2.options.length = 0; 
+				for (i = 0; i < shapes.length; i++) {
+					createOption(ddl2, shapes[i], shapes[i]);
+				}
+				break;
+			case 'Names':
+				ddl2.options.length = 0;
+				for (i = 0; i < names.length; i++) {
+					createOption(ddl2, names[i], names[i]);
+				}
+				break;
+			default:
+				ddl2.options.length = 0;
+			break;
+		}
+
+	}
+
+	function createOption(ddl, text, value) {
+		var opt = document.createElement('option');
+		opt.value = value;
+		opt.text = text;
+		ddl.options.add(opt);
+	}
+
+	function open() {
+		var text = document.getElementById('hihi');
+		text.innerHTML += "hihi";
+		window.location.href = window.location.href + "#openModal";
+	}
+</script>
+
+<body>
+<p style="font-family:Georgia, serif; font-size: 12pt">Category:</p>
+<select id="ddl" onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
+	<option value=""></option>
+	<option value="Colours">Colours</option>
+	<option value="Shapes">Shapes</option>
+	<option value="Names">Names</option>
+</select>
+<p style="font-family:Georgia, serif; font-size: 12pt">Item:</p>
+<select id="ddl2">
+</select>
+<br>
+<div id="display">
+	<div id="items">
+		<p>hi everyone</p>
+	</div>
+	<div id="tbl">
+		<table id="tbl-list" class="reference">
+			<tr>
+				<th>Nutrient</th>
+				<th>Amount</th>
+			</tr>
+			<tr>
+				<td>Calories</td>
+				<td>1</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<button onclick="open()">Modal box</button>
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2 id="hihi">Modal Box</h2>
+		<p>This is a sample modal box that can be created using the powers of CSS3.</p>
+		<p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+	</div>
+</div>
+
+</body>
