@@ -1,0 +1,11 @@
+API:
+Make search suggestion api
+Create logic and api for calories calculations
+Make food suggestion api
+(if time allows) Make user information storage
+
+WEB:
+Use weebly to create basic website
+
+DATABASE:
+Make data migration script
