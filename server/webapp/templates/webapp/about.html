@@ -123,36 +123,9 @@ else document.observe('dom:loaded', initFlyouts);
 
 <div><div style="height:20px;overflow:hidden"></div>
 <div id='692435038499556796-slideshow'></div>
-<script type='text/javascript'>
-(function(jQuery) {
-	function init() {
-		wSlideshow.render({
-			elementID:"692435038499556796",
-			nav:"thumbnails",
-			navLocation:"bottom",
-			captionLocation:"bottom",
-			transition:"slide",
-			autoplay:"1",
-			speed:"4",
-			aspectRatio:"auto",
-			showControls:"false",
-			randomStart:"false",
-			images:[
-				{"url":'{% static "img/2091372.jpg" %}',
-					"width":400,"height":313,"fullHeight":800,"fullWidth":1020},
-				{"url":"static/img/9182273.jpg",
-					"width":284,"height":177,"fullHeight":177,"fullWidth":284},
-				{"url":"http://czgu.pythonanywhere.com/static/img/5528793.jpg",
-					"width":400,"height":249,"fullHeight":687,"fullWidth":1100}
-			]
-		})
-	}
-
-	jQuery ? jQuery(init) : document.observe('dom:loaded', init)
-})(window._W && _W.jQuery)
-
-</script>
-
+<a>
+    <img src={% static 'img/2091372_orig.jpg' %} alt="Picture" style="width:100%;max-width:531px" />
+</a>
 <div style="height:20px;overflow:hidden"></div></div>
 
 
