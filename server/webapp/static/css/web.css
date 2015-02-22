@@ -53,16 +53,11 @@ table.reference tr:nth-child(even)  {background-color:#f5f5f5;}
 	pointer-events: none;
 }
 
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
-}
-
 .modalDialog > div {
-	width: 400px;
+	width: 600px;
 	position: relative;
 	margin: 10% auto;
-	padding: 10px 20px 170px 20px;
+	padding: 10px 20px 300px 20px;
 	border-radius: 10px;
 	background: #fff;
 	background: -moz-linear-gradient(#fff, #999);

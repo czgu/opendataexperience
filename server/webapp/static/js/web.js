@@ -2,7 +2,10 @@ function initOpt(arr) {
 	var ddl = document.getElementById('ddl');
 	var names = arr['categories']
 	for (i = 0; i < names.length; i++) {
-		createOption(ddl, name[i]["category_name"],name[i]["category_name"]);
+        if (!names[i]) {
+            continue;
+        }
+		createOption(ddl, names[i]["category_name"], names[i]["category_name"]);
 	}
 }
 
@@ -59,13 +62,22 @@ function search(ddl3){
 	getJson(request,printData);
 }
 
-function open() {
-	var text = document.getElementById('hihi');
-	text.innerHTML += "hihi";
-	$(function(){ // On DOM ready
-		$('#openOnLoad').click();
-	});
-}
+
+
+$(document).ready(function () {
+    $( '#openWrapper' ).click(function() {
+        $( '#openModal' ).fadeTo(0.5, 1);
+        $( '#openModal' ).css( 'pointer-events', 'auto' );
+        console.log('hello');
+    });
+    $( '#closeModal' ).click(function(e) {
+        console.log('world');
+        e.preventDefault();
+        $( '#openModal' ).fadeTo(0.5, 0);
+        $( '#openModal' ).css( 'pointer-events', 'none' );
+    });
+    getJson("categories/all/",initOpt);
+});
 
 var xmlhttp = new XMLHttpRequest();
 var nut = ["energy","protein","carbohydrate","total_sugar","total_dietary_fibre","total_fat","cholesterol","calcium","vitaminA","vitaminC"];
@@ -102,4 +114,3 @@ function clearPage() {
 	document.getElementById('tbl-list').innerHTML = '';
 }
 
-getJson("categories/all/",initOpt);
