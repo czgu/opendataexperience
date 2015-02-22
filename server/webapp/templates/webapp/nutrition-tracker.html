@@ -106,119 +106,9 @@ else document.observe('dom:loaded', initFlyouts);
 		<div id="main-wrap">
 			<div class="container">
 				<div id='wsite-content' class='wsite-elements wsite-not-footer'>
-<div><div id="808515694578855609" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><style type="text/css">
-	/*body {
-		height: 600px;
-		width: 800px;
-		border: 1px solid #ddd;
-	}*/
-	#display {
-		height: 100%;
-		width: 100%;
-		border-top: 1px solid #ddd;
-		margin-top: 20px;
-	}
-	#items {
-		float: left;
-		height: 100%;
-		width: 60%;
-	}
-	#tbl {
-		float: left;
-		height:100%;
-		width: 37%;
-		padding-left: 2%;
-	}
-	table.reference {
-		width:100%;
-		max-width:100%;
-		border-left:1px solid #dddddd;
-		border-right:1px solid #dddddd;
-		border-bottom:1px solid #dddddd;
-	}
-	table.reference>thead>tr>th,
-	 table.reference>tbody>tr>th,
-	 table.reference>tfoot>tr>th,
-	 table.reference>thead>tr>td,
-	 table.reference>tbody>tr>td,
-	 table.reference>tfoot>tr>td {
-		padding: 10px;
-		line-height: 1.5;
-		vertical-align: top;
-		border-top: 1px solid #ddd;
-	}
-	table.reference tr:nth-child(odd)   {background-color:#ffffff;}
-	table.reference tr:nth-child(even)  {background-color:#f5f5f5;}
+<div><div id="808515694578855609" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
 
-
-	.modalDialog {
-		position: fixed;
-		font-family: Arial, Helvetica, sans-serif;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background: rgba(0,0,0,0.8);
-		z-index: 99999;
-		opacity:0;
-		-webkit-transition: opacity 400ms ease-in;
-		-moz-transition: opacity 400ms ease-in;
-		transition: opacity 400ms ease-in;
-		pointer-events: none;
-	}
-
-	.modalDialog:target {
-		opacity:1;
-		pointer-events: auto;
-	}
-
-	.modalDialog > div {
-		width: 400px;
-		position: relative;
-		margin: 10% auto;
-		padding: 10px 20px 170px 20px;
-		border-radius: 10px;
-		background: #fff;
-		background: -moz-linear-gradient(#fff, #999);
-		background: -webkit-linear-gradient(#fff, #999);
-		background: -o-linear-gradient(#fff, #999);
-	}
-
-	.close {
-		background: #606061;
-		color: #FFFFFF;
-		line-height: 25px;
-		position: absolute;
-		right: -12px;
-		text-align: center;
-		top: -10px;
-		width: 24px;
-		text-decoration: none;
-		font-weight: bold;
-		-webkit-border-radius: 12px;
-		-moz-border-radius: 12px;
-		border-radius: 12px;
-		-moz-box-shadow: 1px 1px 3px #000;
-		-webkit-box-shadow: 1px 1px 3px #000;
-		box-shadow: 1px 1px 3px #000;
-	}
-
-	.close:hover { background: #00d9ff; }
-
-	.wrap {
-		margin: 10px;
-	}
-	#modLeft {
-		float: left;
-		width: 65%;
-	}
-	#modRight {
-		float: left;
-		width: 30%;
-	}
-
-</style>
-
+<link rel='stylesheet' type='text/css' href={% static 'css/web.css' %} title='wsite-theme-css' />
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
 <script src={% static 'js/web.js' %}></script>
@@ -234,7 +124,8 @@ else document.observe('dom:loaded', initFlyouts);
 </div>
 <button onclick="getJson('Butter tart',printData)">Test json</button>
 
-<a href="#openModal" id="openOnLoad">HH</a><button onclick="open()">Modal box</button>
+<a href="#openModal" id="openOnLoad">HH</a>
+<button onclick="open()">Modal box</button>
 <div id="openModal" class="modalDialog">
 	<div style="margin-top: 170px">
 		<a href="#close" title="Close" class="close">X</a>
