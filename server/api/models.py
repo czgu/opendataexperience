@@ -47,3 +47,5 @@ class DetailedFoodNutritions(models.Model):
 
         return _dict
 
+class Contact(models.Model):
+    info = models.CharField(max_length=2000)

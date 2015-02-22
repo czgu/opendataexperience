@@ -121,7 +121,7 @@ else document.observe('dom:loaded', initFlyouts);
 <div class="wsite-spacer" style="height:48px;"></div>
 
 <div>
-<form enctype="multipart/form-data" action="http://www.weebly.com/weebly/apps/formSubmit.php" method="POST" id="form-920130288609496385">
+    <form enctype="multipart/form-data" action={% url 'api:submit' %} method="POST" id="form-920130288609496385">{% csrf_token %}
 <div id="920130288609496385-form-parent" class="wsite-form-container" style="margin-top:10px;">
   <ul class="formlist" id="920130288609496385-form-list">
     <h2 class="wsite-content-title" style="text-align:left;">Send your information</h2>
@@ -144,7 +144,7 @@ else document.observe('dom:loaded', initFlyouts);
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-257317938148688569">Email <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<input id="input-257317938148688569" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u257317938148688569" />
+					<input id="input-257317938148688569" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u257317938148688569[Email]" />
 				</div>
 				<div id="instructions-257317938148688569" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -152,7 +152,7 @@ else document.observe('dom:loaded', initFlyouts);
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-323838401450859603">Comment <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<textarea id="input-323838401450859603" class="wsite-form-input wsite-input wsite-input-width-370px" name="_u323838401450859603" style="height: 200px"></textarea>
+					<textarea id="input-323838401450859603" class="wsite-form-input wsite-input wsite-input-width-370px" name="_u323838401450859603[Comment]" style="height: 200px"></textarea>
 				</div>
 				<div id="instructions-323838401450859603" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
