@@ -125,12 +125,12 @@ else document.observe('dom:loaded', initFlyouts);
 <button onclick="getJson('food/?name=Butter tart',printData)">Test json</button>
 
 <a href="#openModal" id="openOnLoad">
-    <button>Modal box</button>
+    <button>Select Food Item</button>
 </a>
 <div id="openModal" class="modalDialog">
 	<div style="margin-top: 170px">
 		<a href="#close" title="Close" class="close">X</a>
-		<h2 id="hihi">Modal Box</h2>
+		<h2 id="hihi">Select Food Item</h2>
 		<div class="wrap">
 			<div id="modLeft">
 				<p style="font-family:Georgia, serif; font-size: 12pt">Category:</p>
@@ -145,7 +145,7 @@ else document.observe('dom:loaded', initFlyouts);
 				<br>
 			</div>
 			<div id="modRight">
-				<br><br><button onclick="search()">Add</button>
+				<br><br><button onclick="search()" style="width:70px; height:40px; font-size: 19pt; font-family:fantasy">Add</button>
 			</div>
 		</div>
 	</div>
