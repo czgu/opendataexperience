@@ -122,7 +122,7 @@ else document.observe('dom:loaded', initFlyouts);
 		</table>
 	</div>
 </div>
-<button onclick="getJson('Butter tart',printData)">Test json</button>
+<button onclick="getJson('food/?name=Butter tart',printData)">Test json</button>
 
 <a href="#openModal" id="openOnLoad">HH</a>
 <button onclick="open()">Modal box</button>
@@ -133,11 +133,7 @@ else document.observe('dom:loaded', initFlyouts);
 		<div class="wrap">
 			<div id="modLeft">
 				<p style="font-family:Georgia, serif; font-size: 12pt">Category:</p>
-				<select id="ddl" onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
-					<option value=""></option>
-					<option value="Colours">Colours</option>
-					<option value="Shapes">Shapes</option>
-					<option value="Names">Names</option>
+				<select id="ddl" onchange="getJson('categories/all/detailed/',configureDropDownLists)">
 				</select>
 				<p style="font-family:Georgia, serif; font-size: 12pt">Item:</p>
 				<select id="ddl2">

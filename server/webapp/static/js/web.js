@@ -51,7 +51,7 @@ function getJson(request, success) {
 	        success(myArr);
 	    }
 	}
-	xmlhttp.open("GET", "/api/food/?name=" + request, true);
+	xmlhttp.open("GET", "/api/" + request, true);
 	xmlhttp.send();
 }
 
@@ -73,3 +73,5 @@ function clearPage() {
 	document.getElementById('items').innerHTML = 'cleared';
 	document.getElementById('tbl-list').innerHTML = '';
 }
+
+getJson("categories/all/",initOpt);
