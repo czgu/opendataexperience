@@ -85,8 +85,8 @@ else document.observe('dom:loaded', initFlyouts);
 			<div class="container">
 				<table>
 					<tr>
-						<td id="logo"><span class='wsite-logo'><a href='index.html'><span id="wsite-title">Nutri-Tools</span></a></span></td>
-						<td id="menu"><ul class='wsite-menu-default'><li id='pg677773975109734505'><a href="index.html" data-membership-required="0" >Home</a></li><li id='pg687622072675596437'><a href="nutrition-tracker.html" data-membership-required="0" >Nutrition Tracker</a></li><li id="active"><a href="about.html">About</a></li><li id='pg112921315226525493'><a href="contact.html" data-membership-required="0" >Contact</a></li></ul></td>
+						<td id="logo"><span class='wsite-logo'><a href={% url 'webapp:home' %}><span id="wsite-title">Nutri-Tools</span></a></span></td>
+						<td id="menu"><ul class='wsite-menu-default'><li id='pg677773975109734505'><a href={% url 'webapp:home' %} data-membership-required="0" >Home</a></li><li id='pg687622072675596437'><a href={% url 'webapp:nutrition-tracker' %} data-membership-required="0" >Nutrition Tracker</a></li><li id="active"><a href={% url 'webapp:about' %}>About</a></li><li id='pg112921315226525493'><a href={% url 'webapp:contact' %} data-membership-required="0" >Contact</a></li></ul></td>
 					</tr>
 				</table>
 			</div><!-- end container -->
