@@ -1,4 +1,4 @@
-#!/Users/cgu/hackathon/opendataexperience/server/env/bin/python
+#!/Users/cgu/hackathon/opendataexperience/env/bin/python
 
 # -*- coding: utf-8 -*-
 import re

@@ -32,7 +32,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/cgu/hackathon/opendataexperience/server/env"
+set -gx VIRTUAL_ENV "/Users/cgu/hackathon/opendataexperience/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
