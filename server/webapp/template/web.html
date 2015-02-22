@@ -1,18 +1,7 @@
 <link rel="stylesheet" href="/web.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="/web.js"></script>
 
-<body>
-<p style="font-family:Georgia, serif; font-size: 12pt">Category:</p>
-<select id="ddl" onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
-	<option value=""></option>
-	<option value="Colours">Colours</option>
-	<option value="Shapes">Shapes</option>
-	<option value="Names">Names</option>
-</select>
-<p style="font-family:Georgia, serif; font-size: 12pt">Item:</p>
-<select id="ddl2">
-</select>
-<br>
 <div id="display">
 	<div id="items">
 		<p>hi everyone</p>
@@ -31,14 +20,29 @@
 	</div>
 </div>
 
-<button onclick="open()">Modal box</button>
+<a href="#openModal" id="openOnLoad">X</a> <button onclick="open()">Modal box</button>
 <div id="openModal" class="modalDialog">
-	<div>
+	<div style="margin-top: 170px">
 		<a href="#close" title="Close" class="close">X</a>
 		<h2 id="hihi">Modal Box</h2>
-		<p>This is a sample modal box that can be created using the powers of CSS3.</p>
-		<p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+		<div class="wrap">
+			<div id="modLeft">
+				<p style="font-family:Georgia, serif; font-size: 12pt">Category:</p>
+				<select id="ddl" onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
+					<option value=""></option>
+					<option value="Colours">Colours</option>
+					<option value="Shapes">Shapes</option>
+					<option value="Names">Names</option>
+				</select>
+				<p style="font-family:Georgia, serif; font-size: 12pt">Item:</p>
+				<select id="ddl2">
+				</select>
+				<br>
+				<br>
+			</div>
+			<div id="modRight">
+				<br><br><button>Add</button>
+			</div>
+		</div>
 	</div>
 </div>
-
-</body>

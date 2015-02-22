@@ -39,5 +39,7 @@ function createOption(ddl, text, value) {
 function open() {
 	var text = document.getElementById('hihi');
 	text.innerHTML += "hihi";
-	window.location.href = window.location.href + "#openModal";
+	$(function(){ // On DOM ready
+		$('#openOnLoad').click();
+	});
 }
