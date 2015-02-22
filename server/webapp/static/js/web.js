@@ -68,9 +68,9 @@ function open() {
 }
 
 var xmlhttp = new XMLHttpRequest();
-var nut = ["energy","protein","carbohydrate","total_sugar","total_dietary_fibre","total_fat","cholesterol","calcium","iron","sodium","potassium","magnesium","vitaminA","vitaminC","caffeine"];
+var nut = ["energy","protein","carbohydrate","total_sugar","total_dietary_fibre","total_fat","cholesterol","calcium","vitaminA","vitaminC"];
 
-var nutName = {"energy": "KiloCalories","protein":"Protein","carbohydrate":"Carbohydrate","total_sugar":"Total Sugar","total_dietary_fibre":"Total Dietary Fibre","total_fat":"Total Fat","cholesterol":"Cholesterol","calcium":"Calcium","iron":"Iron","sodium":"Sodium","potassium":"Potassium","magnesium":"Magnesium","vitaminA":"Vitamin A","vitaminC":"Vitamin C","caffeine":"Caffeine"};
+var nutName = {"energy": "KiloCalories","protein":"Protein","carbohydrate":"Carbohydrate","total_sugar":"Total Sugar","total_dietary_fibre":"Total Dietary Fibre","total_fat":"Total Fat","cholesterol":"Cholesterol","calcium":"Calcium","vitaminA":"Vitamin A","vitaminC":"Vitamin C"};
 
 function getJson(request, success) {
 	xmlhttp.onreadystatechange = function() {
