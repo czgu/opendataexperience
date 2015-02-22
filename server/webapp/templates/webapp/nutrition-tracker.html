@@ -109,8 +109,9 @@ else document.observe('dom:loaded', initFlyouts);
 <div><div id="808515694578855609" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
 
 <link rel='stylesheet' type='text/css' href={% static 'css/web.css' %} title='wsite-theme-css' />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 <script src={% static 'js/web.js' %}></script>
 
 <div id="display">
@@ -124,12 +125,13 @@ else document.observe('dom:loaded', initFlyouts);
 </div>
 <button onclick="getJson('food/?name=Butter tart',printData)">Test json</button>
 
-<a href="#openModal" id="openOnLoad">
-    <button>Select Food Item</button>
-</a>
+<div id="test1"></div>
+
+<button id="openWrapper">Select Food Item</button>
+
 <div id="openModal" class="modalDialog">
 	<div style="margin-top: 170px">
-		<a href="#close" title="Close" class="close">X</a>
+        <a title='Close' href="" id='closeModal' class='close'>X</a>
 		<h2 id="hihi">Select Food Item</h2>
 		<div class="wrap">
 			<div id="modLeft">
