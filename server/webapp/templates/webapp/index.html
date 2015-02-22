@@ -64,7 +64,7 @@ var STYLE_PREFIX = 'wsite';
 <script type='text/javascript'><!--
 var IS_ARCHIVE=1;
 (function(jQuery){
-function initFlyouts(){initPublishedFlyoutMenus([{"id":"677773975109734505","title":"Home","url":"index.html","target":""},{"id":"687622072675596437","title":"Nutrition Tracker","url":"nutrition-tracker.html","target":""},{"id":"862058900637090306","title":"About","url":"about.html","target":""},{"id":"112921315226525493","title":"Contact","url":"contact.html","target":""}],"677773975109734505","<li><a href=\"#\" data-membership-required=\"\" >{{title}}<\/a><\/li>",'active',false)}
+function initFlyouts(){initPublishedFlyoutMenus([{"id":"677773975109734505","title":"Home","url":"index.html","target":""},{"id":"687622072675596437","title":"Nutrition Tracker","url":"nutritionTracker.html","target":""},{"id":"862058900637090306","title":"About","url":"about.html","target":""},{"id":"112921315226525493","title":"Contact","url":"contact.html","target":""}],"677773975109734505","<li><a href=\"#\" data-membership-required=\"\" >{{title}}<\/a><\/li>",'active',false)}
 if (jQuery) {
 jQuery(document).ready(function() { jQuery(initFlyouts); });
 }else{
@@ -100,7 +100,7 @@ else document.observe('dom:loaded', initFlyouts);
 				<table>
 					<tr>
 						<td id="logo"><span class='wsite-logo'><a href={% url 'webapp:home' %}><span id="wsite-title">Nutri-Tools</span></a></span></td>
-						<td id="menu"><ul class='wsite-menu-default'><li id="active"><a href={% url 'webapp:home' %}>Home</a></li><li id='pg687622072675596437'><a href={% url 'webapp:nutrition-tracker' %} data-membership-required="0" >Nutrition Tracker</a></li><li id='pg862058900637090306'><a href={% url 'webapp:about' %} data-membership-required="0" >About</a></li><li id='pg112921315226525493'><a href={% url 'webapp:contact' %} data-membership-required="0" >Contact</a></li></ul></td>
+						<td id="menu"><ul class='wsite-menu-default'><li id="active"><a href={% url 'webapp:home' %}>Home</a></li><li id='pg687622072675596437'><a href={% url 'webapp:nutritionTracker' %} data-membership-required="0" >Nutrition Tracker</a></li><li id='pg862058900637090306'><a href={% url 'webapp:about'  %} data-membership-required="0" >About</a></li><li id='pg112921315226525493'><a href={% url 'webapp:contact' %} data-membership-required="0" >Contact</a></li></ul></td>
 					</tr>
 				</table>
 				<div class="separate"></div>
@@ -117,7 +117,7 @@ else document.observe('dom:loaded', initFlyouts);
 								<h2><span class='wsite-text wsite-headline'>Track the Food You Eat</span></h2>
 								<p><span class='wsite-text wsite-headline-paragraph'>Use Nutrition Tracker to search food nutrition and keep track of what you eat!</span></p>
 								<div style="text-align:center;"><div style="height: 0px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href={% url 'webapp:nutrition-tracker' %} >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={% url 'webapp:nutritionTracker' %} >
 <span class="wsite-button-inner">TRY IT NOW</span>
 </a>
 <div style="height: 0px; overflow: hidden;"></div></div>
@@ -149,7 +149,7 @@ else document.observe('dom:loaded', initFlyouts);
 						
 
 <div><div class="wsite-image wsite-image-border-thin " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a href={% url 'webapp:about/Project' %}>
+<a href={% url 'webapp:about' 'project' %}>
 <img src={% static 'img/8903746.jpg' %} alt="Picture" style="width:225;max-width:100%" />
 </a>
 <div style="display:block;font-size:90%">Our Project</div>
@@ -175,7 +175,7 @@ else document.observe('dom:loaded', initFlyouts);
 						
 
 <div><div class="wsite-image wsite-image-border-thin " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
-<a href={% url 'webapp:about/Team' %}>
+<a href={% url 'webapp:about' 'team' %}>
 <img src={% static 'img/2442512_orig.jpg' %} alt="Picture" style="width:100%;max-width:1100px" />
 </a>
 <div style="display:block;font-size:90%">Our Team</div>
