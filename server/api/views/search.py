@@ -15,6 +15,7 @@ def search_food_handler(request):
             ordered_by: one attribute to order the result
             category: one category, can be general or specific
             filter: TODO
+            only_name: boolean
         }
 
         return:{
@@ -45,6 +46,10 @@ def search_food_handler(request):
     order_by = request.GET.get('order_by')
     if len(food_items) > 1 and order_by and order_by in food_items[0].keys():
         food_items.sort(key=lambda el: el[order_by], reverse=True)
+
+    only_name = request.GET.get('only_name')
+    if only_name:
+        food_items = map(lambda el: el['food_name'], food_items)
 
     return JsonResponse({'result': food_items})
 
