@@ -61,6 +61,9 @@ function getJson(request, success) {
 }
 
 function printData(arr) {
+	var text = document.getElementById('items');
+	text.innerHTML = '<p> ' + arr["food_name"] + '           <button onclick="clearPage()">remove</button></p>';
+
 	var out = document.getElementById('tbl-list');
 	out.innerHTML = '<tr><th>Nutrient</th><th>Amount</th></tr>';
 
@@ -68,4 +71,9 @@ function printData(arr) {
 		out.innerHTML += "<tr><td>" + nutName[ nut[i] ] + "</td><td>" + arr[ nut[i] ] + "</td></tr>";
 	}
 
+}
+
+function clearPage() {
+	document.getElementById('items').innerHTML = 'cleared';
+	document.getElementById('tbl-list').innerHTML = '';
 }
