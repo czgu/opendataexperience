@@ -50,7 +50,7 @@ function configureDropDownLists2(arr) {
 function createOption(ddl, text, value) {
 	var opt = document.createElement('option');
 	opt.value = value;
-	opt.text = text;
+	opt.text = text.toLowerCase();
 	ddl.options.add(opt);
 }
 
