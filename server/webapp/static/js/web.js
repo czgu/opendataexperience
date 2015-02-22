@@ -1,32 +1,27 @@
-function configureDropDownLists(ddl1,ddl2) {
-	var colours = new Array('Black', 'White', 'Blue');
-	var shapes = new Array('Square', 'Circle', 'Triangle');
-	var names = new Array('John', 'David', 'Sarah');
+function initOpt(arr) {
+	var ddl = document.getElementById('ddl');
+	var names = arr['categories']
+	for (i = 0; i < names.length; i++) {
+		createOption(ddl, name[i]["category_name"],name[i]["category_name"]);
+	}
+}
 
-	switch (ddl1.value) {
-		case 'Colours':
-			ddl2.options.length = 0;
-			for (i = 0; i < colours.length; i++) {
-				createOption(ddl2, colours[i], colours[i]);
-			}
+function configureDropDownLists(arr) {
+	var cat = document.getElementById('ddl').value;
+    var opts;
+
+	for (i = 0; i < arr["categories"].length; i++) {
+		if (cat == arr["categories"][i]["category_name"]) {
+			opts = arr["categories"][i]["sub_categories"];
 			break;
-		case 'Shapes':
-			ddl2.options.length = 0; 
-			for (i = 0; i < shapes.length; i++) {
-				createOption(ddl2, shapes[i], shapes[i]);
-			}
-			break;
-		case 'Names':
-			ddl2.options.length = 0;
-			for (i = 0; i < names.length; i++) {
-				createOption(ddl2, names[i], names[i]);
-			}
-			break;
-		default:
-			ddl2.options.length = 0;
-		break;
+		}
 	}
 
+	var ddl2 = document.getElementById('ddl2');
+
+	for (i = 0; i < opts.length; i++) {
+		createOption(ddl2, opts[i]["category_name"],opts[i]["category_name"]);
+	}
 }
 
 function createOption(ddl, text, value) {
@@ -45,9 +40,9 @@ function open() {
 }
 
 var xmlhttp = new XMLHttpRequest();
-var nut = ["energy","protein","carbohydrate","total_sugar","total_dietary_fibre","total_fat","saturated_fat","cholesterol","calcium","iron","sodium","potassium","magnesium","phosphorus","vitaminA","vitaminC","alcohol","caffeine"];
+var nut = ["energy","protein","carbohydrate","total_sugar","total_dietary_fibre","total_fat","cholesterol","calcium","iron","sodium","potassium","magnesium","vitaminA","vitaminC","caffeine"];
 
-var nutName = {"energy": "KiloCalories","protein":"Protein","carbohydrate":"Carbohydrate","total_sugar":"Total Sugar","total_dietary_fibre":"Total Dietary Fibre","total_fat":"Total Fat","saturated_fat":"Saturated Fat","cholesterol":"Cholesterol","calcium":"Calcium","iron":"Iron","sodium":"Sodium","potassium":"Potassium","magnesium":"Magnesium","phosphorus":"Phosphorus","vitaminA":"Vitamin A","vitaminC":"Vitamin C","alcohol":"Alcohol","caffeine":"Caffeine"};
+var nutName = {"energy": "KiloCalories","protein":"Protein","carbohydrate":"Carbohydrate","total_sugar":"Total Sugar","total_dietary_fibre":"Total Dietary Fibre","total_fat":"Total Fat","cholesterol":"Cholesterol","calcium":"Calcium","iron":"Iron","sodium":"Sodium","potassium":"Potassium","magnesium":"Magnesium","vitaminA":"Vitamin A","vitaminC":"Vitamin C","caffeine":"Caffeine"};
 
 function getJson(request, success) {
 	xmlhttp.onreadystatechange = function() {
@@ -68,9 +63,10 @@ function printData(arr) {
 	out.innerHTML = '<tr><th>Nutrient</th><th>Amount</th></tr>';
 
 	for (i = 0; i < nut.length; i++) {
-		out.innerHTML += "<tr><td>" + nutName[ nut[i] ] + "</td><td>" + arr[ nut[i] ] + "</td></tr>";
+		if (arr[ nut[i] ] != "0") {
+			out.innerHTML += "<tr><td>" + nutName[ nut[i] ] + "</td><td>" + arr[ nut[i] ] + "</td></tr>";
+		}
 	}
-
 }
 
 function clearPage() {
