@@ -136,14 +136,16 @@ else document.observe('dom:loaded', initFlyouts);
 				<p style="font-family:Georgia, serif; font-size: 12pt">Category:</p>
 				<select id="ddl" onchange="getJson('categories/all/detailed/',configureDropDownLists)">
 				</select>
-				<p style="font-family:Georgia, serif; font-size: 12pt">Item:</p>
-				<select id="ddl2">
+				<p style="font-family:Georgia, serif; font-size: 12pt">Sub-Category:</p>
+				<select id="ddl2" onchange="config(this)">
 				</select>
-				<br>
+				<p style="font-family:Georgia, serif; font-size: 12pt">Item:</p>
+				<select id="ddl3">
+				</select>
 				<br>
 			</div>
 			<div id="modRight">
-				<br><br><button>Add</button>
+				<br><br><button onclick="search()">Add</button>
 			</div>
 		</div>
 	</div>

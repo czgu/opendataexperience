@@ -24,11 +24,39 @@ function configureDropDownLists(arr) {
 	}
 }
 
+function configDP2(ddl2) {
+	var request = "search/food/?category=" + dll2.value + "&&only_name=true";
+	getJson(request,configureDropDownLists2);
+}
+
+function configureDropDownLists2(arr) {
+	var cat = document.getElementById('ddl2').value;
+    var opts;
+
+	for (i = 0; i < arr["categories"].length; i++) {
+		if (cat == arr["categories"][i]["category_name"]) {
+			opts = arr["categories"][i]["sub_categories"];
+			break;
+		}
+	}
+
+	var ddl2 = document.getElementById('ddl3');
+
+	for (i = 0; i < opts.length; i++) {
+		createOption(ddl2, opts[i]["category_name"],opts[i]["category_name"]);
+	}
+}
+
 function createOption(ddl, text, value) {
 	var opt = document.createElement('option');
 	opt.value = value;
 	opt.text = text;
 	ddl.options.add(opt);
+}
+
+function search(ddl3){
+	var request = "food/?name=" + ddl3.value;
+	getJson(request,printData);
 }
 
 function open() {
